@@ -10,9 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 
 """
-import environ
-environ.Env()
-environ.Env.read_env()
 
 from pathlib import Path
 
@@ -35,7 +32,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'main_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,7 +77,7 @@ WSGI_APPLICATION = 'spacecrafts.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'spacecrafts',
+        'NAME': 'spacecrafts2',
     }
 }
 
@@ -124,14 +120,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/crafts/'
-LOGOUT_REDIRECT_URL = '/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 import django_on_heroku 
 django_on_heroku.settings(locals())
